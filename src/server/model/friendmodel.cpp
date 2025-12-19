@@ -1,12 +1,18 @@
 #include"friendmodel.hpp"
 #include<vector>
 #include "db.h"
+#include <cstring>
 
 
 //添加好友关系
-void FriendModel::insert(int userid, int friendid){
-   
-// 1.组装sql语句
+/**
+ * @brief 添加好友关系
+ * @param userid 用户id 
+ * @param grofriendidupid 好友 
+ * @return 
+ */
+void FriendModel::insert(int userid, int friendid)
+{
     char sql[1024] = {0};
     sprintf(sql, "insert into Friend values(%d, %d)", userid, friendid);
 
@@ -15,39 +21,37 @@ void FriendModel::insert(int userid, int friendid){
     {
         mysql.update(sql);
     }
-
 }
  
 //返回用户好友列表  friendid
-vector<User> FriendModel::query(int userid){
-
-   char sql[1024]={0};
-
-    //查询语句，根据userid查询相关好友的id
-   // select a.id,a.name,a.state from user a inner join friend b on b,friendid = a.id whereTb.userid=号d
-   sprintf(sql, "select a.id,a.name,a.state from User a inner join Friend b on b.friendid = a.id where b.userid=%d", userid);
+/**
+ * @brief 返回用户好友列表
+ * @param userid 用户id 
+ * @return 成功返回好友列表，失败返回nullpter
+ */
+vector<User> FriendModel::query(int userid)
+{
+    char sql[1024] = {0};
+    sprintf(sql, "select a.id,a.name,a.state from User a inner join Friend b on b.friendid = a.id where b.userid=%d", userid);
 
     vector<User> vec;
-
     MySQL mysql;
-
-    if(mysql.connect()){
-        MYSQL_RES* res =mysql.query(sql);
-
-        MYSQL_ROW row;
-        if(res != nullptr){
-        while((row = mysql_fetch_row(res))!= nullptr){
+    if (mysql.connect())
+    {
+        MYSQL_RES* res = mysql.query(sql);
+        if (res != nullptr)
+        {
+            MYSQL_ROW row;
+            while ((row = mysql_fetch_row(res)) != nullptr)
+            {
                 User user;
                 user.setId(atoi(row[0]));
                 user.setName(row[1]);
                 user.setState(row[2]);
                 vec.push_back(user);
-        
             }
             mysql_free_result(res);
-            return vec;     
         }
-
-   }
-
+    }
+    return vec;
 }

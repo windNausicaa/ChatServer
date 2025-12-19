@@ -4,8 +4,8 @@
 
 #include<mysql/mysql.h>
 #include<string>
+#include<vector>
 using namespace std;
-
 
 
 // 数据库操作类
@@ -19,13 +19,23 @@ public:
     // 连接数据库
     bool connect();
     // 更新操作
-    bool update(string sql);
+    bool update(const std::string& sql);
     // 查询操作
-    MYSQL_RES* query(string sql);
-    // 获取连接
+    MYSQL_RES* query(const std::string& sql);
+
     MYSQL* getConnection();
+
+    // 安全转义字符串
+    std::string escapeString(const std::string& str) {
+        char escaped[ str.length()*2 + 1 ];
+        mysql_real_escape_string(_conn, escaped, str.c_str(), str.length());
+        return std::string(escaped);
+    }
+    
 private:
     MYSQL *_conn;
+
+    std::vector<long> _int_params;
 };
 
 #endif

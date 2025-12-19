@@ -3,6 +3,8 @@
 #define CHATSERVICE_H
 
 #include <muduo/net/TcpConnection.h>
+#include <muduo/base/Atomic.h> // 包含Atomic头文件
+
 #include<unordered_map>
 #include<functional>
 
@@ -27,6 +29,7 @@ using json = nlohmann::json;
 //这个类最终会由chatserver.cpp使用
 // 函数模板，MsgHandler可以接收任何形式的函数
 using MsgHandler = std:: function<void(const TcpConnectionPtr &conn,json &js, Timestamp)>;
+
 
 
 class ChatService{

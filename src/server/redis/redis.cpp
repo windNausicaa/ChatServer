@@ -60,7 +60,9 @@ bool Redis::publish(int channel, string message)
     if (nullptr == reply)
     {
         cerr << "publish command failed!" << endl;
-        return false;
+        //再试一次
+        reply = (redisReply *)redisCommand(_publish_context, "PUBLISH %d %s", channel, message.c_str());
+        if (nullptr == reply) return false;
     }
     freeReplyObject(reply);
     return true;

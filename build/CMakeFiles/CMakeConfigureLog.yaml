@@ -1,0 +1,370 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 3.10.0-1160.119.1.el7.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/rh/devtoolset-8/root/usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/red/projects/chat/ChatServer/build/CMakeFiles/3.26.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6"
+      binary: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6
+        
+        Run Build Command(s):/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_462d1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_462d1.dir/build.make CMakeFiles/cmTC_462d1.dir/build
+        gmake[1]: Entering directory '/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6'
+        Building CXX object CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/rh/devtoolset-8/root/usr/bin/c++   -v -o CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/devtoolset-8/root/usr/bin/c++
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-8/root/usr --mandir=/opt/rh/devtoolset-8/root/usr/share/man --infodir=/opt/rh/devtoolset-8/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --with-default-libstdcxx-abi=gcc4-compatible --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-8.3.1-20190311/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 8.3.1 20190311 (Red Hat 8.3.1-3) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/cc1plus -quiet -v -D_GNU_SOURCE /usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc1NYYca.s
+        GNU C++14 (GCC) version 8.3.1 20190311 (Red Hat 8.3.1-3) (x86_64-redhat-linux)
+        	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version isl-0.16.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include-fixed"
+        ignoring nonexistent directory "/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/red/zookeeper/src/c/include
+         .
+         /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8
+         /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux
+         /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward
+         /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include
+         /usr/local/include
+         /opt/rh/devtoolset-8/root/usr/include
+         /usr/include
+        End of search list.
+        GNU C++14 (GCC) version 8.3.1 20190311 (Red Hat 8.3.1-3) (x86_64-redhat-linux)
+        	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version isl-0.16.1-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 7f7bfebac998692a8c6049d3da01a54f
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/as -v --64 -o CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1NYYca.s
+        GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-55.el7.2
+        COMPILER_PATH=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_462d1
+        /usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_462d1.dir/link.txt --verbose=1
+        /opt/rh/devtoolset-8/root/usr/bin/c++  -v CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_462d1 
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/devtoolset-8/root/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-8/root/usr --mandir=/opt/rh/devtoolset-8/root/usr/share/man --infodir=/opt/rh/devtoolset-8/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --with-default-libstdcxx-abi=gcc4-compatible --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-8.3.1-20190311/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 8.3.1 20190311 (Red Hat 8.3.1-3) (GCC) 
+        COMPILER_PATH=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_462d1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUGvwd9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_462d1 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8 -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_462d1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        gmake[1]: Leaving directory '/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/red/zookeeper/src/c/include]
+          add: [.]
+          add: [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8]
+          add: [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux]
+          add: [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward]
+          add: [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include]
+          add: [/usr/local/include]
+          add: [/opt/rh/devtoolset-8/root/usr/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/home/red/zookeeper/src/c/include] ==> [/home/red/zookeeper/src/c/include]
+        skipping relative include dir [.]
+        collapse include dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8] ==> [/opt/rh/devtoolset-8/root/usr/include/c++/8]
+        collapse include dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux] ==> [/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux]
+        collapse include dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward] ==> [/opt/rh/devtoolset-8/root/usr/include/c++/8/backward]
+        collapse include dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include] ==> [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/opt/rh/devtoolset-8/root/usr/include] ==> [/opt/rh/devtoolset-8/root/usr/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/home/red/zookeeper/src/c/include;/opt/rh/devtoolset-8/root/usr/include/c++/8;/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux;/opt/rh/devtoolset-8/root/usr/include/c++/8/backward;/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include;/usr/local/include;/opt/rh/devtoolset-8/root/usr/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_462d1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_462d1.dir/build.make CMakeFiles/cmTC_462d1.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-wIP9Y6']
+        ignore line: [Building CXX object CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/rh/devtoolset-8/root/usr/bin/c++   -v -o CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/devtoolset-8/root/usr/bin/c++]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/devtoolset-8/root/usr --mandir=/opt/rh/devtoolset-8/root/usr/share/man --infodir=/opt/rh/devtoolset-8/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --with-default-libstdcxx-abi=gcc4-compatible --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-8.3.1-20190311/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 8.3.1 20190311 (Red Hat 8.3.1-3) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/cc1plus -quiet -v -D_GNU_SOURCE /usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc1NYYca.s]
+        ignore line: [GNU C++14 (GCC) version 8.3.1 20190311 (Red Hat 8.3.1-3) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3)  GMP version 6.0.0  MPFR version 3.1.1  MPC version 1.0.1  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/red/zookeeper/src/c/include]
+        ignore line: [ .]
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8]
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux]
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward]
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 8.3.1 20190311 (Red Hat 8.3.1-3) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 8.3.1 20190311 (Red Hat 8.3.1-3)  GMP version 6.0.0  MPFR version 3.1.1  MPC version 1.0.1  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 7f7bfebac998692a8c6049d3da01a54f]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/as -v --64 -o CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1NYYca.s]
+        ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-55.el7.2]
+        ignore line: [COMPILER_PATH=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_462d1]
+        ignore line: [/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_462d1.dir/link.txt --verbose=1]
+        ignore line: [/opt/rh/devtoolset-8/root/usr/bin/c++  -v CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_462d1 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/devtoolset-8/root/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/devtoolset-8/root/usr --mandir=/opt/rh/devtoolset-8/root/usr/share/man --infodir=/opt/rh/devtoolset-8/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --with-default-libstdcxx-abi=gcc4-compatible --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-8.3.1-20190311/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 8.3.1 20190311 (Red Hat 8.3.1-3) (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_462d1' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUGvwd9.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_462d1 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8 -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /lib/../lib64/crtn.o]
+          arg [/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccUGvwd9.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_462d1] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o] ==> obj [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o]
+          arg [-L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8] ==> dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8]
+          arg [-L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../..]
+          arg [CMakeFiles/cmTC_462d1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o] ==> obj [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8] ==> [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8]
+        collapse library dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> [/opt/rh/devtoolset-8/root/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> [/opt/rh/devtoolset-8/root/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o;/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8;/opt/rh/devtoolset-8/root/usr/lib64;/lib64;/usr/lib64;/opt/rh/devtoolset-8/root/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindGTest.cmake:283 (find_package)"
+      - "src/CMakeLists.txt:5 (find_package)"
+    directories:
+      source: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl"
+      binary: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl
+        
+        Run Build Command(s):/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_296e4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_296e4.dir/build.make CMakeFiles/cmTC_296e4.dir/build
+        gmake[1]: 进入目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl”
+        Building CXX object CMakeFiles/cmTC_296e4.dir/src.cxx.o
+        /opt/rh/devtoolset-8/root/usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++2a -o CMakeFiles/cmTC_296e4.dir/src.cxx.o -c /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl/src.cxx
+        Linking CXX executable cmTC_296e4
+        /usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_296e4.dir/link.txt --verbose=1
+        /opt/rh/devtoolset-8/root/usr/bin/c++ CMakeFiles/cmTC_296e4.dir/src.cxx.o -o cmTC_296e4 
+        CMakeFiles/cmTC_296e4.dir/src.cxx.o：在函数‘main’中：
+        src.cxx:(.text+0x2d)：对‘pthread_create’未定义的引用
+        src.cxx:(.text+0x39)：对‘pthread_detach’未定义的引用
+        src.cxx:(.text+0x45)：对‘pthread_cancel’未定义的引用
+        src.cxx:(.text+0x56)：对‘pthread_join’未定义的引用
+        src.cxx:(.text+0x6a)：对‘pthread_atfork’未定义的引用
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_296e4.dir/build.make:99：cmTC_296e4] 错误 1
+        gmake[1]: 离开目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-S5CPdl”
+        gmake: *** [Makefile:127：cmTC_296e4/fast] 错误 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindGTest.cmake:283 (find_package)"
+      - "src/CMakeLists.txt:5 (find_package)"
+    directories:
+      source: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz"
+      binary: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz
+        
+        Run Build Command(s):/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2659d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2659d.dir/build.make CMakeFiles/cmTC_2659d.dir/build
+        gmake[1]: 进入目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz”
+        Building CXX object CMakeFiles/cmTC_2659d.dir/CheckFunctionExists.cxx.o
+        /opt/rh/devtoolset-8/root/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=c++2a -o CMakeFiles/cmTC_2659d.dir/CheckFunctionExists.cxx.o -c /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_2659d
+        /usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2659d.dir/link.txt --verbose=1
+        /opt/rh/devtoolset-8/root/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_2659d.dir/CheckFunctionExists.cxx.o -o cmTC_2659d  -lpthreads 
+        /opt/rh/devtoolset-8/root/usr/libexec/gcc/x86_64-redhat-linux/8/ld: 找不到 -lpthreads
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_2659d.dir/build.make:99：cmTC_2659d] 错误 1
+        gmake[1]: 离开目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-viAZBz”
+        gmake: *** [Makefile:127：cmTC_2659d/fast] 错误 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "/usr/local/cmake-3.26.4-linux-x86_64/share/cmake-3.26/Modules/FindGTest.cmake:283 (find_package)"
+      - "src/CMakeLists.txt:5 (find_package)"
+    directories:
+      source: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N"
+      binary: "/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N
+        
+        Run Build Command(s):/usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b905/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9b905.dir/build.make CMakeFiles/cmTC_9b905.dir/build
+        gmake[1]: 进入目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N”
+        Building CXX object CMakeFiles/cmTC_9b905.dir/CheckFunctionExists.cxx.o
+        /opt/rh/devtoolset-8/root/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create -std=c++2a -o CMakeFiles/cmTC_9b905.dir/CheckFunctionExists.cxx.o -c /home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_9b905
+        /usr/local/cmake-3.26.4-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b905.dir/link.txt --verbose=1
+        /opt/rh/devtoolset-8/root/usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_9b905.dir/CheckFunctionExists.cxx.o -o cmTC_9b905  -lpthread 
+        gmake[1]: 离开目录“/home/red/projects/chat/ChatServer/build/CMakeFiles/CMakeScratch/TryCompile-w80J6N”
+        
+      exitCode: 0
+...

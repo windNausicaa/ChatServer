@@ -40,33 +40,42 @@ bool MySQL::connect()
         LOG_INFO << "connect mysql fail!";
     }
 
-    return p;
+
+    //重试一次
+    if (p == nullptr) {
+        LOG_INFO << "connect mysql fail! Retrying...";
+        // 重试一次
+        p = mysql_real_connect(_conn, server.c_str(), user.c_str(),
+                          password.c_str(), dbname.c_str(), 3306, nullptr, 0);  // 复制参数
+        if (p == nullptr) return false;
+    }
+
+    return true;
 
 }
-// 更新操作
-bool MySQL::update(string sql)
+
+MYSQL_RES* MySQL::query(const std::string& sql)
 {
-    cout<<"MySQL::update"+sql<<endl;
+    if (mysql_query(_conn, sql.c_str())) {
+        LOG_INFO << "query失败: " << mysql_error(_conn);
+        return nullptr;
+    }
+    return mysql_use_result(_conn);
     
-    if (mysql_query(_conn, sql.c_str()))
-    {
-        LOG_INFO << __FILE__ << ":" << __LINE__ << ":"
-            << sql << "更新失败!";
+}
+
+//更新操作
+bool MySQL::update(const std::string& sql)
+{
+    if (mysql_query(_conn, sql.c_str())) {
+        LOG_INFO << "update失败: " << mysql_error(_conn);
         return false;
     }
     return true;
 }
-// 查询操作
-MYSQL_RES* MySQL::query(string sql)
-{
-    if (mysql_query(_conn, sql.c_str()))
-    {
-        LOG_INFO << __FILE__ << ":" << __LINE__ << ":"
-            << sql << "查询失败!";
-        return nullptr;
-    }
-    return mysql_use_result(_conn);
-}
+
+
+
 
 MYSQL* MySQL::getConnection(){
     return _conn;

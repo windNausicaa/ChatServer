@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'chatserver'
+    static_configs:
+      - targets: ['localhost:9100']  # 这个端口我们不用真的9100，用file读取
+    file_sd_configs:
+      - files:
+        - /tmp/chat_metrics.txt  # 读取我们刚才生成的文本文件
+        refresh_interval: 15s

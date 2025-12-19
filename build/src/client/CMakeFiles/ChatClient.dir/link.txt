@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-8/root/usr/bin/c++ CMakeFiles/ChatClient.dir/main.cpp.o CMakeFiles/ChatClient.dir/__/public.cpp.o -o /home/red/projects/chat/ChatServer/bin/ChatClient   -L/usr/lib64/mysql  -Wl,-rpath,/usr/lib64/mysql -lpthread /usr/lib64/libssl.so /usr/lib64/libcrypto.so 

@@ -8,6 +8,12 @@
 // ！！！ 此处为客户端主代码，也就是用户那边下载到手机或者电脑里的代码，执行下面的代码和远端的服务器连接，然后聊天
 // ！！！ 这里涉及到 如何 使用 http的连接
 
+// RAII
+#include <memory>
+#include <thread>
+#include <utility>
+#include <unistd.h>
+
 #include "json.hpp"
 #include <iostream>
 #include <thread>
@@ -201,45 +207,86 @@ void readTaskHandler(int clientfd)
 
     for (;;)
     {
-        char buffer[1024] = {0};
-        int len = recv(clientfd, buffer, 1024, 0);  // 阻塞了
-        if (-1 == len || 0 == len)
-        {
-            close(clientfd);
-            exit(-1);
+
+
+        fd_set readfds;
+        FD_ZERO(&readfds);
+        FD_SET(clientfd, &readfds); // 监视客户端socket
+
+        struct timeval tv = {5, 0};  // 设置5秒超时
+        int ret = select(clientfd + 1, &readfds, NULL, NULL, &tv);
+
+
+        if (ret == -1) {
+        cerr << "Select error";
+            break; // 选择出错，退出循环
+        }
+        if (ret == 0) { 
+            // 超时，可以在这里添加一些周期性任务或超时逻辑
+            continue; 
         }
 
-        // 接收ChatServer转发的数据，反序列化生成json数据对象
-        json js = json::parse(buffer);
-        int msgtype = js["msgid"].get<int>();
-        if (ONE_CHAT_MSG == msgtype)
-        {
-            cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
-                 << " said: " << js["msg"].get<string>() << endl;
-            continue;
-        }
+        // 检查clientfd是否在可读集合中
+       if (FD_ISSET(clientfd, &readfds)) {
 
-        if (GROUP_CHAT_MSG == msgtype)
-        {
-            cout << "群消息[" << js["groupid"] << "]:" << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
-                 << " said: " << js["msg"].get<string>() << endl;
-            continue;
-        }
 
-        if (LOGIN_MSG_ACK == msgtype)
-        {
-            doLoginResponse(js); // 处理登录响应的业务逻辑
-            sem_post(&rwsem);    // 通知主线程，登录结果处理完成
-            continue;
-        }
+            char buffer[1024] = {0};
+            int len = recv(clientfd, buffer, 1024, 0);  // 阻塞了
+            if (-1 == len || 0 == len)
+            {
+                close(clientfd);
+                exit(-1);
+            }
 
-        if (REG_MSG_ACK == msgtype)
-        {
-            doRegResponse(js);
-            sem_post(&rwsem);    // 通知主线程，注册结果处理完成
-            continue;
+            // 接收ChatServer转发的数据，反序列化生成json数据对象
+            json js = json::parse(buffer);
+            int msgtype = js["msgid"].get<int>();
+
+             //  新增：处理心跳响应消息 (msgid 100)
+            if (msgtype == 100) {
+                // 回发同样的js数据[1](@ref)
+                std::string response = js.dump();
+                send(clientfd, response.c_str(), response.length(), 0);
+                continue; // 处理完成，继续下一轮循环
+            }
+
+
+            if (ONE_CHAT_MSG == msgtype)
+            {
+               // 解密
+                std::string encrypted = js["msg"].get<std::string>();
+                std::string msg = ChatCrypto::decryptMessage(encrypted, "mysecretkey12345");
+
+                //
+                cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
+                    << " said: " << js["msg"].get<string>() << endl;
+                continue;
+            }
+
+            if (GROUP_CHAT_MSG == msgtype)
+            {
+                cout << "群消息[" << js["groupid"] << "]:" << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
+                    << " said: " << js["msg"].get<string>() << endl;
+                continue;
+            }
+
+            if (LOGIN_MSG_ACK == msgtype)
+            {
+                doLoginResponse(js); // 处理登录响应的业务逻辑
+                sem_post(&rwsem);    // 通知主线程，登录结果处理完成
+                continue;
+            }
+
+            if (REG_MSG_ACK == msgtype)
+            {
+                doRegResponse(js);
+                sem_post(&rwsem);    // 通知主线程，注册结果处理完成
+                continue;
+            }
         }
     }
+    
+    
 
 }
 
@@ -551,6 +598,12 @@ void chat(int clientfd, string str)
     js["name"] = g_currentUser.getName();
     js["toid"] = friendid;
     js["msg"] = message;
+
+    // 消息加密
+    std::string encryptedMsg = ChatCrypto::encryptMessage(message, "mysecretkey12345"); // 加密消息
+    js["msg"] = encryptedMsg;
+
+
     js["time"] = getCurrentTime();
     string buffer = js.dump();
 

@@ -2,6 +2,13 @@
 #ifndef PUBLIC_H
 #define PUBLIC_H
 
+#include <openssl/aes.h>  
+#include <string>
+#include <vector>
+#include<muduo/base/Atomic.h>
+
+extern muduo::AtomicInt64 g_onlineUsers;  // 定义聊天人数
+
 enum EnMsgType{
     LOGIN_MSG = 1,  //登录消息
     LOGIN_MSG_ACK,  //登录响应消息
@@ -15,5 +22,10 @@ enum EnMsgType{
     ADD_GROUP_MSG,  //加入群组
     GROUP_CHAT_MSG,   //群聊天
 };
+
+namespace ChatCrypto {
+    std::string encryptMessage(const std::string& msg, const std::string& key);  // 只这行
+    std::string decryptMessage(const std::string& encrypted, const std::string& key);  // 只这行
+}
 
 #endif

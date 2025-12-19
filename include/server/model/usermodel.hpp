@@ -5,6 +5,7 @@
 #define USERMODEL_H
 
 #include "user.hpp"
+#include <openssl/sha.h> // 预防SQL注入，加密
 
 //User表的数据操作类
 class UserModel {
@@ -16,11 +17,14 @@ public:
     //查询用户信息
     User query(int id);
 
+    //查询用户名是否重复
+
     // 更新用户的状态信息
     bool updateState(User user);
 
     //重置用户的状态信息
     void resetState();
+
  
 };
 

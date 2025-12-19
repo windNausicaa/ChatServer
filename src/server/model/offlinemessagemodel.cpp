@@ -1,27 +1,36 @@
 #include "offlinemessagemodel.hpp"
 #include "db.h"
+#include <cstring>
 
 // 存储用户的离线消息
+/**
+ * @brief 存储用户的离线消息
+ * @param userid 用户id 
+ * @param msg 离线消息
+ * @return 成功返回用户对象，失败返回nullptr
+ */
 void OfflineMsgModel::insert(int userid, string msg)
 {
-    // 1.组装sql语句
     char sql[1024] = {0};
-    sprintf(sql, "insert into OfflineMessage values(%d, '%s')", userid, msg.c_str());
-
     MySQL mysql;
     if (mysql.connect())
     {
+        std::string escaped_msg = mysql.escapeString(msg);
+        sprintf(sql, "insert into OfflineMessage values(%d, '%s')", userid, escaped_msg.c_str());
         mysql.update(sql);
     }
 }
 
 // 删除用户的离线消息
+/**
+ * @brief 删除用户的离线消息
+ * @param userid 用户id 
+ * @return 
+ */
 void OfflineMsgModel::remove(int userid)
 {
-    // 1.组装sql语句
     char sql[1024] = {0};
-    sprintf(sql, "delete from OfflineMessage where userid=%d", userid);
-
+    sprintf(sql, "delete from OfflineMessage where userid = %d", userid);
     MySQL mysql;
     if (mysql.connect())
     {
@@ -30,9 +39,13 @@ void OfflineMsgModel::remove(int userid)
 }
 
 // 查询用户的离线消息
+/**
+ * @brief 查询用户的离线消息
+ * @param userid 用户id 
+ * @return 用户消息数组
+ */
 vector<string> OfflineMsgModel::query(int userid)
 {
-    // 1.组装sql语句
     char sql[1024] = {0};
     sprintf(sql, "select message from OfflineMessage where userid = %d", userid);
 
@@ -43,14 +56,12 @@ vector<string> OfflineMsgModel::query(int userid)
         MYSQL_RES *res = mysql.query(sql);
         if (res != nullptr)
         {
-            // 把userid用户的所有离线消息放入vec中返回
             MYSQL_ROW row;
-            while((row = mysql_fetch_row(res)) != nullptr)
+            while ((row = mysql_fetch_row(res)) != nullptr)
             {
                 vec.push_back(row[0]);
             }
             mysql_free_result(res);
-            return vec;
         }
     }
     return vec;
